@@ -1,0 +1,647 @@
+$green: #2ecc71;
+$red: #e74c3c;
+$blue: #3498db;
+$yellow: #f1c40f;
+$purple: #8e44ad;
+$turquoise: #1abc9c;
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
+
+$btn-width: 250px !default;
+$btn-height: 80px !default;
+$btn-full: $btn-height+$btn-width !default;
+$btn-half: $btn-full/2 !default;
+$bg-color: #eeeeee !default;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html, body{
+  font-family: 'Quicksand';
+  font-weight: bolder;
+  height: 100vh;
+  width: 100vw;
+  background-color: #fff;
+  *,
+  *:before,
+  *:after {
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+  }
+}
+
+a {
+  background: rgba($white, 0);
+    border-bottom: 1px solid;
+    color: $white;
+    line-height: 1.4;
+    padding: .25em;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba($white, 1);
+      color: $red;
+    }
+}
+
+#particles-js{
+  height: 100%;
+  width: 100%;
+  background: #222;
+  position: fixed;
+}
+
+.wrapper{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: lighter;
+  font-size: 40px;
+
+}
+
+.welcome-section{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.content-wrap{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.fly-in-text{
+  display: table;
+  list-style: none;
+  opacity: 0.8;
+}
+
+.content-hidden .fly-in-text li {opacity: 0;}
+.content-hidden .fly-in-text li:nth-child(1) {transform: translate3d(-120px,0,0);}
+.content-hidden .fly-in-text li:nth-child(2) {transform: translate3d(-90px,0,0);}
+.content-hidden .fly-in-text li:nth-child(3) {transform: translate3d(-60px,0,0);}
+.content-hidden .fly-in-text li:nth-child(4) {transform: translate3d(-30px,0,0);}
+.content-hidden .fly-in-text li:nth-child(5) {transform: translate3d(0px,0,0);}
+.content-hidden .fly-in-text li:nth-child(6) {transform: translate3d(30px,0,0);}
+.content-hidden .fly-in-text li:nth-child(7) {transform: translate3d(60px,0,0);}
+.content-hidden .fly-in-text li:nth-child(8) {transform: translate3d(90px,0,0);}
+.content-hidden .fly-in-text li:nth-child(9) {transform: translate3d(120px,0,0);}
+.content-hidden .enter-button{opacity: 0; transform: translate3d(0,-30px,0);}
+
+/*  ############# READ THIS ##############
+  The following code is for media queries.
+  The screen resolution stats for mobile phones are:
+  360x640 : 41.1%
+  720x1280 : 11.06%
+  480x800 : 3.82%
+  1080x1920 : 3.47%
+  540x960 : 3.2%
+
+  So focus more on 360px screeensize
+  To emulate screen on PC : http://quirktools.com/screenfly/
+*/
+
+@media (min-width:240px) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 3px;
+    margin-right: 0px;
+    font-size:  2.9vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 23vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:320px) {
+  .fly-in-text li{
+    text-align: center;
+    display: inline-block;
+    border-spacing: 5px;
+    margin-right: 7px;
+    font-size:  3.5vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 23vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:340px) {
+  .fly-in-text li{
+    text-align: center;
+    display: inline-block;
+    border-spacing: 5px;
+    margin-right: 7px;
+    font-size:  3.7vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 23vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:360px) {
+  .fly-in-text li{
+    text-align: center;
+    display: inline-block;
+    border-spacing: 5px;
+    margin-right: 7.5px;
+    font-size:  4vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 23vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+@media (min-width:414px) {
+  .fly-in-text li{
+    text-align: center;
+    display: inline-block;
+    border-spacing: 5px;
+    margin-right: 7.5px;
+    font-size:  4vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 20vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:480px) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 10px;
+    margin-right: 8px;
+    font-size:  4.2vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 20vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:540px) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 10px;
+    margin-right: 8px;
+    font-size:  4.5vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 18vw;
+    font-size: 1.7vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:600px){
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 8px;
+    margin-right: 15px;
+    font-size:  4vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    margin-top: 90px;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    max-width: $btn-width;
+    margin: 2rem auto;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:720px){
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 8px;
+    margin-right: 15px;
+    font-size:  4.2vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    max-width: $btn-width;
+    margin: 2rem auto;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width:800px) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 10px;
+    margin-right: 20px;
+    font-size:  3vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    max-width: $btn-width;
+    margin: 2rem auto;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media only screen and (orientation: portrait) and (min-width: 1080px) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 10px;
+    margin-right: 20px;
+    font-size:  5vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    max-width: $btn-width;
+    margin: 2rem auto;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
+
+@media (min-width: 1440px) and (orientation: landscape) {
+  .fly-in-text li{
+    display: inline-block;
+    border-spacing: 10px;
+    margin-right: 20px;
+    font-size:  3.5vw;
+    color: #fff;
+    opacity: 1;
+    transition: all 3s ease;
+  }
+  .enter-button {
+    display: block;
+    text-align: center;
+    margin-left: 30px;
+    font-size: 1vw;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0.75;
+    margin-top: 90px;
+    position: relative;
+    overflow: hidden;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    width : 20%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+    outline: 1px solid;
+    outline-color: rgba(255, 255, 255, .5) ;
+    max-width: $btn-width;
+    margin: 2rem auto;
+    border: 2px  currentColor;outline-color: rgba(255, 255, 255, .5);
+    outline-offset: 2px;
+    text-shadow: none;
+    transition: all 2000ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .enter-button:hover {
+    border: 5px solid;
+    border-radius: 15%;
+    box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
+    outline-color: rgba(255, 255, 255, 0);
+    outline-offset: 2vh;
+    text-shadow: 10px 10px 20px #427388;
+  }
+}
